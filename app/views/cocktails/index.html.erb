@@ -1,16 +1,29 @@
 
 
-<h1>SEE ALL OUR COCKTAILS </h1>
 
-<% @cocktails.each do |cocktail|%>
 
-<h2> <%= cocktail.name %> </h2>
-<p> <%= link_to "See details", cocktail_path(cocktail) %> </p>
 
+
+        <div class= "row">
+        <% @cocktails.each do |cocktail|%>
+
+        <div class = "col-xs-12 col-sm-6 col-lg-4">
+        <div class = "card">
+          <div class="card-image">  </div>
+
+          <div class="card-info">
+        <h2> <%= cocktail.name %> </h2>
+      </div>
+      <div class="card-action">
+        <p> <%= link_to "See details" '<i class="fas fa-arrow-right"></i>'.html_safe, cocktail_path(cocktail) %> </p> </div>
+
+        </div>
+      </div>
 <% end %>
 
+</div>
 
-<p> <%= link_to "Add a cocktail", new_cocktail_path(@cocktail) %> </p>
+<p> <%= link_to "Add a cocktail" '<i class="fas fa-plus"></i>'.html_safe, new_cocktail_path(@cocktail) %> </p>
 
 
 
